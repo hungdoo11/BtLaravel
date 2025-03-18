@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #ff6600;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: block; /* Hiển thị lại sidebar */
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Nội dung chính */
+.admin-container {
+  margin-left: 250px; /* Đẩy nội dung sang bên phải */
+  padding: 20px;
+  width: calc(100% - 250px);
+}
+
+/* Dashboard */
+.dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bảng quản lý tin tức */
+/* Table Styling */
+.news-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-table th,
+.news-table td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.news-table thead {
+  background: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+.news-table tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.news-table tbody tr:hover {
+  background: #e9ecef;
+}
+
+.news-table td {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Status Styling */
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status.approved {
+  background: #28a745;
+  color: white;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.edit {
+  background: #ffc107;
+  color: #fff;
+  display: flex;
+  width: 114px;
+  height: 32px;
+}
+
+.edit:hover {
+  background: #e0a800;
+}
+
+.delete {
+  background: #dc3545;
+  color: #fff;
+  width: 100px;
+}
+
+.delete:hover {
+  background: #c82333;
+}
+
+/* Nút hành động */
+.button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #ffcc00;
+  color: black;
+}
+
+.delete-btn {
+  background: #ff3300;
+  color: white;
+}
+
+/* modalmodal */
+/* Nền mờ của modal */
+.modal {
+  display: none; /* Ẩn modal ban đầu */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nội dung modal */
+.modal-content {
+  /* display: none; */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Tiêu đề modal */
+.modal-content h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Input & textarea */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Label */
+.modal-content label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Nút bấm */
+.modal-content button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.news-table th,
+.news-table td {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+/* Nút đăng bài */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Nút đóng */
+.btn-outline-secondary {
+  background-color: #ccc;
+  color: black;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #999;
+}
+
+/* Hiệu ứng xuất hiện */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+option {
+  width: 0px;
+  height: 10px;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #ff7f50; /* Cam */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e67348;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="file"],
+  select,
+  button {
+    font-size: 14px;
+  }
+}
